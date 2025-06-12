@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Detection Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/traffic-detection-system/detection_service
+ExecStart=/home/ubuntu/traffic-detection-system/venv_detection/bin/python run_detection.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+
+[Unit]
+Description=Worker Service
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/traffic-detection-system/worker_service
+ExecStart=/home/ubuntu/traffic-detection-system/venv_worker/bin/python worker.py
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
